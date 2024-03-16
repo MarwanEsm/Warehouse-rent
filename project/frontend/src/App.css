@@ -1,0 +1,7 @@
+html {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin: 0;
+  padding: 50px 0 0 0;
+  height: 100vh;
+  background: linear-gradient(to right, #00b09b, #96c93d);
+}
