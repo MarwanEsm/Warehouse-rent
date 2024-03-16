@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react'
-import warehouse2 from '../../../assets/inputPhotos/warehouse2.jpg'
-import { resizeImages } from '../../../utils/utils';
+import warehouse1 from '../../../assets/photos/warehouse1.jpg'
+import warehouse2 from '../../../assets/photos/warehouse2.jpg'
 import './Offers.css'
 
 
 //TODO: to be replaced with the one coming from the backend
 const offers = [
-    { id: 1, photo: warehouse2, size: '1000 sqft', price: 5000 },
-    { id: 2, photo: warehouse2, size: '2000 sqft', price: 8000 },
-    { id: 2, photo: warehouse2, size: '2000 sqft', price: 8000 },
+    { id: 1, photo: warehouse1, size: '1000 sqft', price: 5000 },
+    { id: 2, photo: warehouse1, size: '2000 sqft', price: 8000 },
+    { id: 3, photo: warehouse2, size: '2000 sqft', price: 8000 },
 ];
 
 
