@@ -1,10 +1,10 @@
 import React from "react"
-import Headline from "../../../components/elements/headline/Headline"
+import WelcomeMessage from "../../../layout/welcomeMessage/WelcomeMessage"
 
 interface LoginPageProps { }
 
 const LoginPage: React.FC<LoginPageProps> = () => <div>
-    <Headline size={4} character=".">Login</Headline>
+    <WelcomeMessage />
 
 </div>
 export default LoginPage

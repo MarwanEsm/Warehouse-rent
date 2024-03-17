@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import warehouse1 from '../../../assets/photos/warehouse1.jpg';
 import warehouse2 from '../../../assets/photos/warehouse2.jpg';
 import './Offers.css';
-import Button from '../../../components/button/Button';
+import Button from '../../../components/elements/button/Button';
 
 const offers = [
     { id: 1, photo: warehouse1, size: '1000 sqft', price: 5000 },

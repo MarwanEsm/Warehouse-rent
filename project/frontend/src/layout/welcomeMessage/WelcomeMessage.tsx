@@ -1,0 +1,18 @@
+import React from "react";
+import Headline from "../../components/elements/headline/Headline";
+import Button from "../../components/elements/button/Button";
+import './WelcomeMessage.css'
+
+interface WelcomeMessageProps { }
+const WelcomeMessage: React.FC<WelcomeMessageProps> = () => {
+
+    return <div className="welcomeMessage_container">
+        <Headline size={4} character="!">Welcome Back</Headline>
+        <p>Enter your personal details and check out the offers</p>
+        <Button onClick={() => console.log('switch to login')
+        }>Login</Button>
+
+    </div>
+}
+
+export default WelcomeMessage

@@ -1,7 +1,7 @@
 .offers_container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
+    gap: 40px;
     justify-content: center;
 }
 
@@ -14,8 +14,6 @@
     padding: 20px;
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
     background-color: #ede6d6;
-    /* Light beige background */
-    /* Add any additional styling you want for the background */
 
     img {
         max-width: 100%;

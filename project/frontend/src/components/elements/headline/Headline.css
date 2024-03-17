@@ -8,3 +8,15 @@ h2 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
+
+h3,
+h4,
+h5 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center
+}
