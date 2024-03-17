@@ -9,8 +9,8 @@ interface HeadlineProps {
 }
 
 const Headline: React.FC<HeadlineProps> = ({ size, children, character = '-', ...options }) =>
-    React.createElement('h' + size, options, size === 1 || size === 2 ?
-        <ColoredDot character={character}>{children}</ColoredDot> : children)
+    React.createElement('h' + size, options, size === 1 || size === 2 || size === 4 ?
+        <ColoredDot character={character} size={size}>{children}</ColoredDot> : children)
 
 
 export default Headline

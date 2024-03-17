@@ -1,12 +1,18 @@
 import React from 'react';
 import LandingPage from './pages/landingPage/LandingPage';
-import './App.css'
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Import Routes
+import LoginPage from './pages/landingPage/login/LoginPage';
+import './App.css';
 
 function App() {
-  return <div>
-    <LandingPage />
-  </div>
+  return (
+    <Router>
+      <Routes> {/* Wrap your routes with Routes */}
+        <Route path='/' element={<LandingPage />} />
+        <Route path='/login' element={<LoginPage />} />
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;

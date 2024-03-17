@@ -3,23 +3,20 @@ import './ColoredDot.css'
 
 interface ColoredDotProps {
     children: ReactNode,
-    character: string
+    character: string,
+    size: number
 }
 
 
-const ColoredDot: React.FC<ColoredDotProps> = ({ children, character }) => {
-
-
-
-
-    return <>
+const ColoredDot: React.FC<ColoredDotProps> = ({ children, size, character }) =>
+    <>
         {Array.isArray(children) ? children[0] : children}
-        <span className='green' >
+        <span className={size === 1 || size === 2 ? 'green' : 'blue'} >
             {character}
         </span>
         {Array.isArray(children) && children.length >= 1 && children.slice(1)}
     </>
-}
+
 
 
 export default ColoredDot
