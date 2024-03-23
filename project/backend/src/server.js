@@ -2,11 +2,56 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const sharp = require('sharp');
 const cors = require('cors');
-const fs = require('fs'); // Import the fs module
-const path = require('path'); // Import the path module
+const fs = require('fs');
+const path = require('path');
+const { MongoClient } = require('mongodb');
+
 const app = express();
 const port = 3001;
 
+const mongoUri = 'mongodb+srv://marwanesmaail85:7hGEyQjLLQaSQvAS@wearhouserentals.f3xzp5e.mongodb.net/?retryWrites=true&w=majority&appName=WearhouseRentals'
+
+
+const connectToMongoDB = async () => {
+    try {
+        const client = await MongoClient.connect(mongoUri, { useNewUrlParser: true, useUnifiedTopology: true });
+        console.log('Connected to MongoDB');
+        return client;
+    } catch (error) {
+        console.error('Error connecting to MongoDB:', error);
+        throw error;
+    }
+}
+
+const startServer = async () => {
+    try {
+        const client = await connectToMongoDB();
+        // Pass MongoDB client to other parts of your application
+        // For example: app.locals.client = client;
+
+        app.listen(port, () => {
+            console.log(`Server is running on port ${port}`);
+        });
+
+        process.on('SIGINT', async () => {
+            await client.close();
+            console.log('MongoDB connection closed');
+            process.exit(0);
+        });
+    } catch (error) {
+        console.error('Failed to start server:', error);
+        process.exit(1);
+    }
+}
+
+startServer();
+
+
+// app.use(
+//   bodyParser.urlencoded({
+//     extended: true,
+//   })
+// );
 app.use(bodyParser.json({ limit: '10mb' }));
 app.use(cors());
 
@@ -16,7 +61,6 @@ app.post('/resize-image', async (req, res) => {
         const inputFolderPath = path.join(__dirname, inputFolder);
         const outputFolderPath = path.join(__dirname, outputFolder);
 
-        // Check if input/output folders exist
         if (!fs.existsSync(inputFolderPath) || !fs.existsSync(outputFolderPath)) {
             throw new Error('Input/output folder does not exist');
         }
@@ -34,8 +78,4 @@ app.post('/resize-image', async (req, res) => {
         console.error('Error resizing images:', error);
         res.status(500).send('Internal server error');
     }
-});
-
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
 });
