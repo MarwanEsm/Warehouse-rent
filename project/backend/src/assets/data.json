@@ -1,0 +1,20 @@
+[
+    {
+        "id": "0",
+        "size": "12 m²",
+        "location": "Dubai Dira",
+        "rent_p.m": "AED 1,200"
+    },
+    {
+        "id": "1",
+        "size": "10  m²",
+        "location": "Sharjah Al Tawaun",
+        "rent_p.m": "AED 850"
+    },
+    {
+        "id": "2",
+        "size": "18 m²",
+        "location": "Dubai Al Qusais",
+        "rent_p.m": "AED 1,200"
+    }
+]
