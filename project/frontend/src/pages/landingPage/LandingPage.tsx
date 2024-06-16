@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
 import Headline from '../../components/elements/headline/Headline';
-import Offers from '../../components/modal/offers/Offers';
+import Offers from './offers/Offers';
 import styles from "./LandingPage.module.scss"
+import CitySelector from '../../components/elements/input/citySelector/CitySelector';
 
 const LandingPage = () => {
     useEffect(() => {
@@ -26,6 +27,7 @@ const LandingPage = () => {
     return (
         <div className={styles.landingPage}>
             <Headline size={1} character='.'>Discover Your Dream Space</Headline>
+            <CitySelector />
             <Offers repeatCard={4} />
         </div>
     );
