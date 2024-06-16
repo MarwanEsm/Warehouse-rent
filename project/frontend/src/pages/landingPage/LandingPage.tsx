@@ -26,7 +26,7 @@ const LandingPage = () => {
     return (
         <div className={styles.landingPage}>
             <Headline size={1} character='.'>Discover Your Dream Space</Headline>
-            <Offers />
+            <Offers repeatCard={4} />
         </div>
     );
 };
