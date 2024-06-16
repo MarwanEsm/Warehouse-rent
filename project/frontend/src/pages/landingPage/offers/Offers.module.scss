@@ -14,6 +14,7 @@
     padding: 20px;
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
     background-color: #ede6d6;
+    transition: transform 0.3s ease;
 
     img {
         max-width: 100%;
@@ -24,12 +25,25 @@
     }
 
     label {
-        margin-bottom: 15px;
-        font-size: 1.2rem;
+        font-size: 15px;
         color: #444;
+    }
+
+    strong {
+        margin: 4px 0;
     }
 }
 
 .offer:hover {
-    scale: 110%;
+    transform: scale(1.03);
+    cursor: pointer;
+
+}
+
+.offer button {
+    margin-top: 10px
+}
+
+.offer button:hover {
+    cursor: pointer;
 }

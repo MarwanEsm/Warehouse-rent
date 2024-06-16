@@ -1,16 +1,14 @@
 .button {
-    padding: 12px 24px;
-    background: linear-gradient(to right, #048d7d, #589dca);
-    color: #fff;
-    font-weight: bolder;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    padding: 15px 50px;
-    font-size: 1rem;
-    letter-spacing: 1px;
+    background-color: transparent;
+    font-size: 14px;
+    padding: 0.3rem 1rem;
     border-radius: 20px;
-    text-transform: uppercase;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    border: 2px solid white;
+    box-shadow: none;
+    margin: auto;
+}
+
+.button:hover {
+    transform: scale(1.1);
+    transition: 300ms ease-in-out all;
 }

@@ -8,7 +8,7 @@ import './style/global.scss'
 function App() {
   return (
     <Router>
-      <Routes> {/* Wrap your routes with Routes */}
+      <Routes>
         <Route path='/' element={<LandingPage />} />
         <Route path='/login' element={<LoginPage />} />
       </Routes>
