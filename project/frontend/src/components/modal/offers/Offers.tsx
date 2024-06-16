@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import warehouse1 from '../../../assets/photos/warehouse1.jpg';
 import warehouse2 from '../../../assets/photos/warehouse2.jpg';
 import styles from "./Offers.module.scss"
-import Button from '../../../components/elements/button/Button';
+import Button from '../../elements/button/Button';
 import { IOffersProps } from '../../../types/components';
 
 const offers = [

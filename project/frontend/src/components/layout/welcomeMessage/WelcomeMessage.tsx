@@ -1,6 +1,6 @@
 import React from "react";
-import Headline from "../../components/elements/headline/Headline";
-import Button from "../../components/elements/button/Button";
+import Headline from "../../elements/headline/Headline";
+import Button from "../../elements/button/Button";
 import styles from "./WelcomeMessage.module.scss"
 
 interface WelcomeMessageProps { }

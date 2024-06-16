@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
 import Headline from '../../components/elements/headline/Headline';
-import Offers from './offers/Offers';
+import Offers from '../../components/modal/offers/Offers';
 import styles from "./LandingPage.module.scss"
 
 const LandingPage = () => {
