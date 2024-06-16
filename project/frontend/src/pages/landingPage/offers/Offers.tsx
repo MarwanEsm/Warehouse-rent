@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import warehouse1 from '../../../assets/photos/warehouse1.jpg';
 import warehouse2 from '../../../assets/photos/warehouse2.jpg';
-import './Offers.css';
+import styles from "./Offers.module.scss"
 import Button from '../../../components/elements/button/Button';
 
 const offers = [
@@ -15,9 +15,9 @@ const Offers = () => {
     const navigate = useNavigate(); // Use useHistory hook here
 
     return (
-        <div className='offers_container' style={{ display: 'grid', gridTemplateColumns: `repeat(${offers.length}, 1fr)` }}>
+        <div className={styles.offers_container} style={{ display: 'grid', gridTemplateColumns: `repeat(${offers.length}, 1fr)` }}>
             {offers.map((offer) => (
-                <div className="offer" key={offer.id}>
+                <div className={styles.offer} key={offer.id}>
                     <img src={offer.photo} alt={`Warehouse ${offer.id}`} />
                     <label>Size: {offer.size}</label>
                     <label>Price: ${offer.price}/month</label>

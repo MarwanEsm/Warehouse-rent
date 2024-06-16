@@ -1,8 +1,6 @@
 import Button from "../../components/elements/button/Button"
 import styles from "./RegistrationForm.module.scss"
 
-
-interface RegistrationFormProps { }
 const RegistrationForm = () => {
 
     return <div className={styles.registration_form_container}>
