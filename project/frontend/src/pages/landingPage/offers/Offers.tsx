@@ -20,7 +20,7 @@ const Offers = () => {
                 <div className={styles.offer} key={offer.id}>
                     <img src={offer.photo} alt={`Warehouse ${offer.id}`} />
                     <label>Size: {offer.size}</label>
-                    <strong>Location:{offer.location}</strong>
+                    <strong>Location: {offer.location}</strong>
                     <label>Price: ${offer.price}/month</label>
                     <Button onClick={() => console.log("clicked")
                     }>Contact Owner</Button>
