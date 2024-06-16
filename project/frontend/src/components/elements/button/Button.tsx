@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react'
-import './Button.css'
+import styles from "./Button.module.scss"
 
 
 interface ButtonProps {
@@ -10,7 +10,7 @@ interface ButtonProps {
 
 const Button: React.FC<ButtonProps> = ({ children, onClick }) => {
 
-    return <button className='button' onClick={onClick}>{children}</button>
+    return <button className={styles.button} onClick={onClick}>{children}</button>
 }
 
 export default Button

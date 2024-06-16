@@ -1,9 +1,11 @@
 import Button from "../../components/elements/button/Button"
+import styles from "./RegistrationForm.module.scss"
+
 
 interface RegistrationFormProps { }
 const RegistrationForm = () => {
 
-    return <div className="registration_form_container">
+    return <div className={styles.registration_form_container}>
         <h4>Create Account</h4>
         <input type="text" required placeholder="Name" />
         <input type="email" required placeholder="Email" />
