@@ -1,31 +1,39 @@
-
-import { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Select from 'react-select';
-import axios from "axios"
+import axios from 'axios';
 
-const CitySelector = () => {
+const CitySelector: React.FC = () => {
+    const [cities, setCities] = useState<string[]>([]);
+    const [error, setError] = useState<string | null>(null);
 
     const getCitiesList = () => {
-        const data = {
-            country: "united arab emirates"
-        };
+        const data = { country: "united arab emirates" };
 
         axios.post('https://countriesnow.space/api/v0.1/countries/cities', data)
             .then(response => {
-                return response.data.map((city: string, index: number) => console.log(city)
-                )
+                if (Array.isArray(response.data.data)) {
+                    setCities(response.data.data);
+                } else {
+                    throw new Error('Data is not an array');
+                }
             })
             .catch(error => {
+                setError(error.message);
                 console.error('Error:', error);
             });
-    }
+    };
 
     useEffect(() => {
-        getCitiesList()
-    }, [])
+        getCitiesList();
+    }, []);
 
-    return <Select />
-}
+    if (error) {
+        return <div>Error: {error}</div>;
+    }
 
+    const options = cities.map(city => ({ value: city, label: city }));
 
-export default CitySelector
+    return <Select options={options} />;
+};
+
+export default CitySelector;

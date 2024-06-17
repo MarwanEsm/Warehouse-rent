@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import ColoredDot from '../coloredDot/ColoredDot';
-import './Headline.css'
+
 
 interface HeadlineProps {
     size: number,

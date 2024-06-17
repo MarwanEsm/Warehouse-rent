@@ -1,3 +1,7 @@
-.landingPage>div {
-    margin: 100px 30px 30px 30px
+.landingPage h1 {
+    font-weight: bolder;
+}
+
+.landingPage>div:first-of-type {
+    margin: 40px 0,
 }
