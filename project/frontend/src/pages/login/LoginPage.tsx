@@ -1,6 +1,6 @@
 import React from "react"
-import WelcomeMessage from "../../layout/welcomeMessage/WelcomeMessage"
-import RegistrationForm from "../../layout/registrationForm/RegistrationForm"
+// import WelcomeMessage from "../../layout/welcomeMessage/WelcomeMessage"
+import RegistrationForm from "../../components/layout/registrationForm/RegistrationForm"
 
 interface LoginPageProps { }
 

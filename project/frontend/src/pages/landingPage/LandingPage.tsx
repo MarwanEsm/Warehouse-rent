@@ -1,8 +1,10 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import axios from 'axios';
 import Headline from '../../components/elements/headline/Headline';
 import Offers from './offers/Offers';
 import styles from "./LandingPage.module.scss"
+import CitySelector from '../../components/elements/input/citySelector/CitySelector';
+import { Row, Col } from "reactstrap"
 
 const LandingPage = () => {
     useEffect(() => {
@@ -26,6 +28,11 @@ const LandingPage = () => {
     return (
         <div className={styles.landingPage}>
             <Headline size={1} character='.'>Discover Your Dream Space</Headline>
+            <Row>
+                <Col lg={{ size: 4, offset: 4 }} md={{ size: 4, offset: 4 }}>
+                    <CitySelector />
+                </Col>
+            </Row>
             <Offers repeatCard={4} />
         </div>
     );

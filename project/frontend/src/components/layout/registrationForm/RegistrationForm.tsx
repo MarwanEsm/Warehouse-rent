@@ -1,4 +1,4 @@
-import Button from "../../components/elements/button/Button"
+import Button from "../../elements/button/Button"
 import styles from "./RegistrationForm.module.scss"
 
 const RegistrationForm = () => {
