@@ -40,8 +40,6 @@ const CitySelector: React.FC = () => {
     const onLocationChange = (value: any) => {
         if (value.value !== undefined) {
             dispatch(setSelectedLocation(value.value))
-            console.log(value);
-
         }
     }
 
