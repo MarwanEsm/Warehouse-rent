@@ -24,29 +24,37 @@ const OfferCard = (props: IOffersProps) => {
 
     const renderOffers = () => {
         if (offers.length > 0) {
-            return <div className={styles.offers_container}
-                style={{ display: 'grid', gridTemplateColumns: `repeat(${props.repeatCard}, 1fr)` }}
-            >
-                {offers.map((offer) => (
-                    <div className={styles.offer} key={offer.id}>
-                        <img src={offer.photo} alt={`Warehouse ${offer.id}`} />
-                        <label>Size: {offer.size}</label>
-                        <strong>Location: {offer.location}</strong>
-                        <label>Price: ${offer.price}/month</label>
-                        <Button onClick={() => console.log("clicked")
-                        }>Contact Owner</Button>
+            const rows = [];
+            for (let i = 0; i < offers.length; i += 4) {
+                const rowOffers = offers.slice(i, i + 4);
+                rows.push(
+                    <div className={styles.offers_row} key={i}>
+                        {rowOffers.map((offer) => (
+                            <div className={styles.offer} key={offer.id}>
+                                <img src={offer.photo} alt={`Warehouse ${offer.id}`} />
+                                <label>Size: {offer.size}</label>
+                                <strong>Location: {offer.location}</strong>
+                                <label>Price: ${offer.price}/month</label>
+                                <Button onClick={() => console.log("clicked")}>Contact Owner</Button>
+                            </div>
+                        ))}
                     </div>
-                ))}
-            </div>
+                );
+            }
+            return <div className={styles.offers_container_wrapper}>{rows}</div>;
         } else {
-            return <div className={styles.noProperty}>
-                <label>No properties are currently available in the selected city
-                    <strong>&nbsp;check back later</strong> or explore options in <strong>other nearby cities</strong>
-                </label>
-                <LoadingAnimation />
-            </div>
+            return (
+                <div className={styles.noProperty}>
+                    <label>No properties are currently available in the selected city
+                        <strong>&nbsp;check back later</strong> or explore options in <strong>other nearby cities</strong>
+                    </label>
+                    <LoadingAnimation />
+                </div>
+            );
         }
     }
+
+
 
     return <>
         {renderOffers()}
