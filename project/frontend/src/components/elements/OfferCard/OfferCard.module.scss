@@ -34,6 +34,7 @@
     }
 }
 
+
 .offer:hover {
     transform: scale(1.03);
     cursor: pointer;
@@ -46,4 +47,23 @@
 
 .offer button:hover {
     cursor: pointer;
+}
+
+.noProperty {
+    border: 2px solid #9fa3a7;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    background-color: #ede6d6;
+    transition: transform 0.3s ease;
+    min-height: 200px;
+    max-width: 400px;
+    max-height: 600px;
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+.noProperty label {
+    margin-bottom: 30px;
 }
