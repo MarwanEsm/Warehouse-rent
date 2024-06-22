@@ -9,8 +9,7 @@ const { MongoClient } = require('mongodb');
 const app = express();
 const port = 3001;
 
-const mongoUri = 'mongodb+srv://marwanesmaail85:7hGEyQjLLQaSQvAS@wearhouserentals.f3xzp5e.mongodb.net/?retryWrites=true&w=majority&appName=WearhouseRentals'
-
+const mongoUri = 'your-mongo-uri-here';
 
 const connectToMongoDB = async () => {
     try {
@@ -21,13 +20,11 @@ const connectToMongoDB = async () => {
         console.error('Error connecting to MongoDB:', error);
         throw error;
     }
-}
+};
 
 const startServer = async () => {
     try {
         const client = await connectToMongoDB();
-        // Pass MongoDB client to other parts of your application
-        // For example: app.locals.client = client;
 
         app.listen(port, () => {
             console.log(`Server is running on port ${port}`);
@@ -42,16 +39,10 @@ const startServer = async () => {
         console.error('Failed to start server:', error);
         process.exit(1);
     }
-}
+};
 
 startServer();
 
-
-// app.use(
-//   bodyParser.urlencoded({
-//     extended: true,
-//   })
-// );
 app.use(bodyParser.json({ limit: '10mb' }));
 app.use(cors());
 
