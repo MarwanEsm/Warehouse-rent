@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import axios from 'axios';
 import Headline from '../../components/elements/headline/Headline';
-import Offers from './offers/Offers';
+import OfferCard from '../../components/elements/OfferCard/OfferCard';
 import styles from "./LandingPage.module.scss"
 import CitySelector from '../../components/elements/input/citySelector/CitySelector';
 import { Row, Col } from "reactstrap"
@@ -33,7 +33,7 @@ const LandingPage = () => {
                     <CitySelector />
                 </Col>
             </Row>
-            <Offers repeatCard={4} />
+            <OfferCard repeatCard={4} />
         </div>
     );
 };

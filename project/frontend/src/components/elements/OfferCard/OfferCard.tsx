@@ -1,7 +1,7 @@
 import warehouse1 from '../../../assets/photos/warehouse1.jpg';
 import warehouse2 from '../../../assets/photos/warehouse2.jpg';
-import styles from "./Offers.module.scss"
-import Button from '../../../components/elements/button/Button';
+import styles from "./OfferCard.module.scss"
+import Button from '../button/Button';
 import { IOffersProps } from '../../../types/components';
 
 const offers = [
@@ -13,7 +13,7 @@ const offers = [
     { id: 6, photo: warehouse2, size: '2000 sqft', location: "Abu Dhabi", price: 8000 },
 ];
 
-const Offers = (props: IOffersProps) => {
+const OfferCard = (props: IOffersProps) => {
 
     return (
         <div className={styles.offers_container} style={{ display: 'grid', gridTemplateColumns: `repeat(${props.repeatCard}, 1fr)` }}>
@@ -31,4 +31,4 @@ const Offers = (props: IOffersProps) => {
     );
 };
 
-export default Offers;
+export default OfferCard;
